@@ -4,7 +4,7 @@ Juul Schnitzler
 
 ## Motivation
 
-Tree-based models such as Decision Trees and Random Forests are widely used in practice, and certain properties are commonly believed to be true. One such property is that these models are invariant under monotonic transformations of individual input features, in other words, scaling a feature should not affect the model’s predictions.
+Tree-based models such as Decision Trees and Random Forests are widely used in practice. A commonly held belief is that they are unaffected by monotonic transformations of input features. For example, scaling a feature should not change the model’s predictions.
 
 In the paper by Su et al. (2011), the authors look into the use of tree-based models in nursing research. They explicitly mention the advantage of tree-based methods being invariant to monotone transformations of predictors. This means the paper relies on the claim being true and promotes the use of tree-based methods in applications such as quality-of-life data.
 
@@ -59,7 +59,7 @@ The following figures show (part of) what the datasets can look like in the desc
 **Figure 2:** Original test set (left) and near-split test set (right):
 <p float="left">
   <img src="https://github.com/user-attachments/assets/c02e46a1-f289-4f4f-8e31-40008be39e13" width="20%" />
-  <img src="https://github.com/user-attachments/assets/0980a385-8de0-46ad-a92d-59eed9f139db" width="20%" />
+  <img src="https://github.com/user-attachments/assets/0980a385-8de0-46ad-a92d-59eed9f139db" width="25%" />
 </p>
 
 
