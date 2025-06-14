@@ -56,7 +56,7 @@ The following figures show (part of) what the datasets can look like in the desc
 **Figure 2:** Original test set (left) and near-split test set (right):
 <p float="left">
   <img src="https://github.com/user-attachments/assets/c02e46a1-f289-4f4f-8e31-40008be39e13" width="20%" />
-  <img src="https://github.com/user-attachments/assets/0980a385-8de0-46ad-a92d-59eed9f139db" width="21%" />
+  <img src="https://github.com/user-attachments/assets/0980a385-8de0-46ad-a92d-59eed9f139db" width="21.5%" />
 </p>
 
 
