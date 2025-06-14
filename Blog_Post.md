@@ -4,7 +4,7 @@ Juul Schnitzler
 
 ## Motivation
 
-Tree-based models such as Decision Trees and Random Forests are widely used in practice. A commonly held belief is that they are unaffected by monotonic transformations of input features. For example, scaling a feature should not change the model’s predictions.
+Tree-based models such as Decision Trees and Random Forests are widely used in practice. A commonly held belief is that they are invariant to monotone transformations of input features. For example, scaling a feature should not change the model’s predictions.
 
 In the paper by Su et al. (2011), the authors look into the use of tree-based models in nursing research. They explicitly mention the advantage of tree-based methods being invariant to monotone transformations of predictors. This means the paper relies on the claim being true and promotes the use of tree-based methods in applications such as quality-of-life data.
 
@@ -17,8 +17,7 @@ Verifying claims about machine and deep learning models is important. If the com
 The code for creating the control dataset can be found in the [code repository](https://github.com/JuulSchnitzler/Control-Dataset). 
 
 ### Creating the Control Dataset
-To test the invariance of Random Forests to feature scaling, specifically for unseen test samples that lie close to a learned split point, we constructed a controlled dataset using the following steps:
-
+To test the invariance of Random Forests to feature scaling, specifically for unseen test samples near a learned decision threshold, we constructed a controlled dataset using the following steps:
 
 1) **Training Set**
    We generate a training set with two features, `X1` and `X2`, drawn independently from a uniform distribution over [0, 10]. The binary target variable `y` is defined as:
@@ -30,20 +29,19 @@ To test the invariance of Random Forests to feature scaling, specifically for un
             y = 0
     ```
 2. **Random Test Set**  
-   A test set `test_random` is created using the same sampling method as the training set (no special structure near the decision threshold).
+   A test set `test_random` is created using the same distribution as the taining data. It provides a baseline for evaluating the effect of monotonic transformations. 
 
-3. **Near-Threshold Test Set**  
-   We create `test_near`,  consisting of values near the decision boundary. Both `X1` and `X2` are drawn independently from a uniform distribution over [4.9, 5.1], so that `X1 + X2` is likely to fall close to the split at `X1 + X2 = 10`.
-
+3. **Near-Split Test Set**  
+   A test set `test_near` is created by sampling `X1` and `X2` independently from a uniform distribution over [4.9, 5.1], so that `X1 + X2` is likely to fall close to the split at `X1 + X2 = 10`.
 
 4. **Monotonic Transformation**  
-   We apply a strictly monotonic transformation to all datasets, scaling `X1` by 2 and `X2` by 0.5. This yields `train_scaled`, `test_random_scaled`, and `test_near_scaled`. These values preserve the ordering of the inputs, but change the relative magnitudes. 
+   We apply a strictly monotonic transformation only to the test sets, scaling `X1` by 2 and `X2` by 0.5. This results in `test_random_scaled`, and `test_near_scaled`. These transformations preserve input ordering but change the feature scales.  
 
 5. **Saving Datasets**  
-   All six datasets are saved as `.csv` files. 
-  
- 
-With this setup, we train Random Forest models on both the original and the scaled training sets, and evaluate on the corresponding test sets. By comparing accuracy on `test_random` vs. `test_random_scaled`, and `test_near` vs. `test_near_scaled`, we can assess whether prediction behavior is stable under monotonic transformations, especially for test inputs that lie near split thresholds. 
+   All five datasets are saved as `.csv` files. 
+
+
+With this setup, we train a Random Forest model on the original training set and evaluate its predictions across all test variants. By comparing results on `test_random` vs. `test_random_scaled`, and `test_near` vs. `test_near_scaled`, we can isolate whether monotonic transformations affect predictions, especially for inputs near learned decision thresholds. 
 
 ### Example
 The following figures show (part of) what the datasets can look like in the described setup.
@@ -52,7 +50,6 @@ The following figures show (part of) what the datasets can look like in the desc
 **Figure 1:** Original training set (left) and scaled training set (right):
 <p float="left">
   <img src="https://github.com/user-attachments/assets/a580b014-9317-4847-b84a-34427324e7bc" width="20%" />
-  <img src="https://github.com/user-attachments/assets/79944c73-8008-40d1-a189-8f27c9c85b4d" width="20%" />
 </p>
 
 
