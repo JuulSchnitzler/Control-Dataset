@@ -29,7 +29,7 @@ To test the invariance of Random Forests to feature scaling, specifically for un
             y = 0
     ```
 2. **Random Test Set**  
-   A test set `test_random` is created using the same distribution as the taining data. It provides a baseline for evaluating the effect of monotonic transformations. 
+   A test set `test_random` is created using the same distribution as the training data. It provides a baseline for evaluating the effect of monotonic transformations. 
 
 3. **Near-Split Test Set**  
    A test set `test_near` is created by sampling `X1` and `X2` independently from a uniform distribution over [4.9, 5.1], so that `X1 + X2` is likely to fall close to the split at `X1 + X2 = 10`.
@@ -41,13 +41,13 @@ To test the invariance of Random Forests to feature scaling, specifically for un
    All five datasets are saved as `.csv` files. 
 
 
-With this setup, we train a Random Forest model on the original training set and evaluate its predictions across all test variants. By comparing results on `test_random` vs. `test_random_scaled`, and `test_near` vs. `test_near_scaled`, we can isolate whether monotonic transformations affect predictions, especially for inputs near learned decision thresholds. 
+With this setup, we train a Random Forest model on the original training set and evaluate its predictions across all test variants. Since the transformation is applied only to the test sets, we can directly assess whether a monotonic change in input representation affects model behavior. By comparing results on `test_random` vs. `test_random_scaled`, and `test_near` vs. `test_near_scaled`, we can isolate whether monotonic transformations affect predictions, especially for inputs near learned decision thresholds. 
 
 ### Example
 The following figures show (part of) what the datasets can look like in the described setup.
 
 
-**Figure 1:** Original training set (left) and scaled training set (right):
+**Figure 1:** Original training set:
 <p float="left">
   <img src="https://github.com/user-attachments/assets/a580b014-9317-4847-b84a-34427324e7bc" width="20%" />
 </p>
