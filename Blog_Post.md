@@ -50,8 +50,7 @@ The following figures show (part of) what the datasets can look like in the desc
 <p float="left">
   <img src="https://github.com/user-attachments/assets/a580b014-9317-4847-b84a-34427324e7bc" width="20%" />
 </p>  
-_Figure 1: Original training set_  
-
+*Figure 1: Original training set*
 
 <p float="left">
   <img src="https://github.com/user-attachments/assets/c02e46a1-f289-4f4f-8e31-40008be39e13" width="20%" />
