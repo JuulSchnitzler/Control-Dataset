@@ -50,19 +50,27 @@ The following figures show (part of) what the datasets can look like in the desc
 <p float="left">
   <img src="https://github.com/user-attachments/assets/a580b014-9317-4847-b84a-34427324e7bc" width="20%" />
 </p>  
+
 *Figure 1: Original training set*
+
 
 <p float="left">
   <img src="https://github.com/user-attachments/assets/c02e46a1-f289-4f4f-8e31-40008be39e13" width="20%" />
   <img src="https://github.com/user-attachments/assets/0980a385-8de0-46ad-a92d-59eed9f139db" width="21.5%" />
 </p>  
-_Figure 2: Original test set (left) and near-split test set (right):_  
+
+*Figure 2: Original test set (left) and near-split test set (right):*  
+
+
 
 <p float="left">
   <img src="https://github.com/user-attachments/assets/8e40ecbe-0698-41ff-9a54-a455af996dae" width="20%" />
   <img src="https://github.com/user-attachments/assets/46ededf3-965d-49f7-b993-bfbeabb69730" width="20%" />
 </p>
-_Figure 3: Scaled test set (left) and scaled near-split test set (right):_  
+
+*Figure 3: Scaled test set (left) and scaled near-split test set (right):*  
+
+
  
 
 ## Conclusion
