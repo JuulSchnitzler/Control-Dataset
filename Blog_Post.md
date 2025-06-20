@@ -59,7 +59,7 @@ The following figures show (part of) what the datasets can look like in the desc
   <img src="https://github.com/user-attachments/assets/0980a385-8de0-46ad-a92d-59eed9f139db" width="21.5%" />
 </p>  
 
-*Figure 2: Original test set (left) and near-split test set (right):*  
+*Figure 2: Original test set (left) and near-split test set (right)*    
 
 
 
@@ -68,7 +68,7 @@ The following figures show (part of) what the datasets can look like in the desc
   <img src="https://github.com/user-attachments/assets/46ededf3-965d-49f7-b993-bfbeabb69730" width="20%" />
 </p>
 
-*Figure 3: Scaled test set (left) and scaled near-split test set (right):*  
+*Figure 3: Scaled test set (left) and scaled near-split test set (right)*    
 
 
  
