@@ -1,14 +1,14 @@
-# Control Dataset: Scaling Invariance Random Forest
+# Control Dataset for Testing Scaling Invariance in Random Forest
 Juul Schnitzler
 5094917 
 
 ## Motivation
 
-Tree-based models such as Decision Trees and Random Forests are widely used in practice. A commonly held belief is that they are invariant to monotone transformations of input features. For example, scaling a feature should not change the model’s predictions.
+Tree-based models such as Decision Trees and Random Forests are widely used in practice. Often people assume that these models are invariant under monotonic transformations of input features, for example, rescaling a feature should not affect the model’s predictions.
 
-In the paper by Su et al. (2011), the authors look into the use of tree-based models in nursing research. They explicitly mention the advantage of tree-based methods being invariant to monotone transformations of predictors. This means the paper relies on the claim being true and promotes the use of tree-based methods in applications such as quality-of-life data.
+In a paper by Su et al. (2011), the authors look into the use of tree-based models in nursing research. They explicitly mention the advantage of tree-based methods being invariant to monotone transformations of predictors. This means the paper relies on the claim being true and promotes the use of tree-based methods in applications such as quality-of-life data.
 
-A paper by Galili & Meilijson (2016) examines this same claim more critically. They mention that while it's widely believed that tree models are invariant under monotonic transformation of features, *“this statement may be false when predicting new observations with values that were not seen in the training-set and are close to the location of the split point of a tree rule”* (Galili & Meilijson, 2016, p. 1). In other words, they hypothesise that monotonic transformations can in fact impact model behaviour in some cases, especially when the test data lies close to a learned decision threshold.
+A paper by Galili & Meilijson (2016) examines the same claim more critically. They mention that while it's widely believed that tree models are invariant under monotonic transformation of features, *“this statement may be false when predicting new observations with values that were not seen in the training-set and are close to the location of the split point of a tree rule”* (Galili & Meilijson, 2016, p. 1). In other words, they hypothesise that monotonic transformations can in fact impact model behaviour in some cases, especially when the test data lies close to a learned decision threshold.
 
 Verifying claims about machine and deep learning models is important. If the commonly assumed invariance of Random Forests to feature scaling does not hold in practice, this can lead to incorrect assumptions when preprocessing data or interpreting model outputs. Since Random Forests are often chosen for their ease of use, it is worth testing whether the invariance holds under controlled conditions. In this blog post, we create a control dataset to evaluate the aforementioned claim made by Galili & Meilijson (2016). Specifically, we create a dataset that contains test data that are near split points.
 
